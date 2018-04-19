@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style type="text/css">
+
+.formstyle {
+  
+  background-color: #AA1111;
+
+  width: 250px;
+  clear: both;
+ 
+  color: white;
+
+  font: 13px arial;
+  font-style: italic;
+
+}
+
+.formstyle input {
+
+  width: 100%;
+  clear: both;
+
+}
+
+body{
+
+background-color: #AA1111;
+
+}
+
+</style>
+</head>
+
+<body>
+
+<hr width="470" align="left">
+<i><font size="5" color="white" face="verdana" > Oracle at Your Fingertips </font> </i> <br><br>
+<font size="6" color="white" face="verdana" > ORACLE DATABASE SERVICE </font>
+
+<hr width="470" align="left">
+
+<br>
+
+<font size="4" color="white" face="optima" >place your order</font> <br>
+  
+<br>
+
+<form>
+
+    <div class="formstyle">
+ 
+    <label>Your Lan ID</label>
+    <input type="text" id="lanid" name="lanid"><br /><br>
+    <label>Email</label>
+    <input type="text" id="email" name="email"><br /><br>
+    <label>Database Name</label>
+    <input type="text" id="dbname" name="dbname"><br /><br>
+
+    </div>
+
+    <br>
+
+    <input type="button" name="exists" id="exists" value="exists?" onclick="location.href='http://localhost:4567/exists/'+ document.getElementById('dbname').value;">
+    <input type="button" name="create" id="create" value="create" onclick="location.href='http://localhost:4567/create/'+ document.getElementById('dbname').value;">
+    <input type="button" name="remove" id="remove" value="remove" onclick="location.href='http://localhost:4567/remove/'+ document.getElementById('dbname').value;">
+<br><br>
+    <input type="button" name="more" id="more" value="I WANT MORE" onclick="location.href='file:///Users/dbgsm0/twork/oracle_saas/html/oraservice_more_items.html' ">
+
+</form>
+
+</body>
+
+</html>
