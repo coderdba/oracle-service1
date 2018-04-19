@@ -1,0 +1,10 @@
+#export ANSIBLE_INVENTORY=/Users/username/opt/ansible/hosts
+#export ANSIBLE_CONFIG=/Users/username/opt/ansible/ansible.cfg
+
+export ANSIBLE_INVENTORY=~/opt/ansible/hosts
+export ANSIBLE_CONFIG=~/opt/ansible/ansible.cfg
+
+export ANSIBLE_HOST_KEY_CHECKING=False
+
+# The following is optional - instead, place the key path in yml
+#ssh-add /Users/username/ansible/sshkeys/ansible.key
