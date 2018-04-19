@@ -1,0 +1,33 @@
+- hosts: ed01adm01vm01.target.com
+  vars:
+    oracle_home: /u01/app/oracle/product/11.2.0.4/dbhome_1
+    oracle_sid: DB11G11
+    #oracle_schema: schema1
+    oracle_schema: "{{ schema_name }}"
+    #log_path: /Users/username/mywork/ansible/playbooks/oraclesvc/logfile.log
+
+  become: false
+
+  tasks:
+
+    # working
+    #- name: select sysdate
+      #shell: export ORACLE_HOME={{ oracle_home }}; export ORACLE_SID={{ oracle_sid }}; export PATH=$PATH:{{ oracle_home }}/bin;printf 'select sysdate from dual;' | $ORACLE_HOME/bin/sqlplus / as sysdba > /tmp/result
+
+    - name: copy the shell script
+      copy:
+        #src: /Users/username/mywork/oracle_saas/ansible/oraclesvc/ora_11g_schema.sh
+        src: ~/mywork/oracle_saas/ansible/oraclesvc/ora_11g_schema.sh
+        dest: /tmp/ora_11g_schema.sh
+        owner: ansible
+        group: dba
+        mode: 0700
+
+    - name: run the script
+      shell: export ORACLE_HOME={{ oracle_home }}; export ORACLE_SID={{ oracle_sid }}; export PATH=$PATH:{{ oracle_home }}/bin; /tmp/ora_11g_schema.sh {{ oracle_schema }} {{ schema_action }}
+      ignore_errors: true
+      register: cmd_out
+
+    - debug: 
+        msg: "ERR - Failed to complete schema operation"
+      when: cmd_out.rc != 0
