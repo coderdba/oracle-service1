@@ -1,0 +1,13 @@
+#GEM_HOME=/Users/username/.chefdk/gem/ruby/2.1.0
+#GEM_PATH=/Users/username/.chefdk/gem/ruby/2.1.0:/opt/chefdk/embedded/lib/ruby/gems/2.1.0
+#GEM_ROOT=/opt/chefdk/embedded/lib/ruby/gems/2.1.0
+
+#/opt/chefdk/bin:/Users/username/.chefdk/gem/ruby/2.1.0/bin:/opt/chefdk/embedded/bin:/opt/chefdk/bin:/Users/username/.chefdk/gem/ruby/2.1.0/bin:/opt/chefdk/embedded/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/chefdk/gitbin:/mywork/opt/groovy-2.4.9/bin:/mywork/opt/gradle-3.4.1/bin:/mywork/opt/apache-maven-3.5.0/bin:/mywork/opt/ngrok:.:/Users/username/opt/instantclient_12_1:/opt/chefdk/gitbin:/mywork/opt/groovy-2.4.9/bin:/mywork/opt/gradle-3.4.1/bin:/mywork/opt/apache-maven-3.5.0/bin:/mywork/opt/ngrok:.:/Users/username/opt/instantclient_12_1
+
+export PATH=~/opt/ruby-2.4.2/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:.
+
+
+export GEM_HOME=~/opt/ruby-2.4.2/gemhome
+export GEM_PATH=~/opt/ruby-2.4.2/lib/ruby/2.4.0:~/opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems:~/opt/ruby-2.4.2/gemhome
+export GEM_ROOT=
+#export GEM_ROOT=~/opt/ruby-2.4.2/lib/ruby/gems/2.4.0/gems
