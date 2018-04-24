@@ -58,4 +58,19 @@ public class Controller {
 		return "Completed " + retcode;
 	
 	}
+	
+	// POST WITH JSON FORMATTED REQUEST BODY
+	@RequestMapping(value = "/schema/json/create", method = RequestMethod.POST)
+	public String oracleSchemaCreateJsonRequest(@RequestBody SchemaRequest schemaRequest) throws Exception {	
+		
+		System.out.println("Inside oracleSchemaCreateJsonRequest");
+		
+		OracleUriFunctions oraFunction = new OracleUriFunctions();
+		int retcode;
+		
+		retcode = oraFunction.oracleAnsible(schemaRequest.getSchemaName(), "CREATE");
+		
+		return "Completed" + retcode;
+		
+	}
 }
