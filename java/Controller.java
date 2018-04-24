@@ -73,4 +73,26 @@ public class Controller {
 		return "Completed" + retcode;
 		
 	}
+	
+	// POST WITH JSON FORMATTED REQUEST BODY - AND RESPONSE IS ANOTHER OBJECT, WHICH GETS SERIALIZED TO JSON IMPLICITLY
+	@RequestMapping(value = "/schema/jsonresponse/create", method = RequestMethod.POST)
+	public SchemaResponse oracleSchemaCreateJsonRequestResponse(@RequestBody SchemaRequest schemaRequest) throws Exception {	
+		
+		System.out.println("Inside oracleSchemaCreateJsonRequest");
+		
+		OracleUriFunctions oraFunction = new OracleUriFunctions();
+		int retcode;
+		
+		retcode = oraFunction.oracleAnsible(schemaRequest.getSchemaName(), "CREATE");
+		
+		SchemaResponse schemaResponse = new SchemaResponse();
+		
+		schemaResponse.setSchemaName(schemaRequest.getSchemaName());
+		schemaResponse.setSchemaAction("CREATE");
+		schemaResponse.setRetcode(retcode);
+		schemaResponse.setMessage("Success if retcode is 0, failure otherwise");
+		
+		return schemaResponse;
+		
+	}
 }
