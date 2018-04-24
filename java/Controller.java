@@ -36,20 +36,26 @@ public class Controller {
 	@RequestMapping(value = "/schema/create/{schemaName}", method = RequestMethod.GET)
 	//public @ResponseBody
 	public String oracleSchemaCreate(@PathVariable("schemaName") String schemaName) throws Exception {	
+		
 		OracleUriFunctions oraFunction = new OracleUriFunctions();
+		int retcode;
+		
 		oraFunction.oracleAnsible(schemaName, "CREATE");
 		
-		return "Completed";
+		return "Completed " + retcode;
 	
 	}
 	
 	@RequestMapping(value = "/schema/remove/{schemaName}", method = RequestMethod.GET)
 	//public @ResponseBody
-	public String oracleSchemaRemove(@PathVariable("schemaName") String schemaName) throws Exception {	
+	public String oracleSchemaRemove(@PathVariable("schemaName") String schemaName) throws Exception {
+		
 		OracleUriFunctions oraFunction = new OracleUriFunctions();
+		int retcode;
+		
 		oraFunction.oracleAnsible(schemaName, "REMOVE");
 		
-		return "Completed";
+		return "Completed " + retcode;
 	
 	}
 }
