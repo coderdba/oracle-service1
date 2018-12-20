@@ -5,25 +5,25 @@ ORACLE DATABASE SCHEMA SERVICE
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-===============================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Two ways of using this service
-===============================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 - RUN ANSIBLE PLAYBOOK DIRECTLY
 - USING THE REST API
 
 
-=============================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 RUN ANSIBLE PLAYBOOK DIRECTLY
-=============================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 Go to the directory ansible/oracle_saas1
 
 Run the command: (replace abc with required schema name, and CREATE with CREATE or REMOVE
 /usr/local/bin/ansible-playbook -s oracle_saas.yml -u ansible --key-file "~/.ssh/ansible.key" --extra-vars="schema_name=abc schema_action=CREATE"
 
 
-=========================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 USING THE REST API
-=========================
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 --------------------------------------------------
 There are three Sinatra REST API files:
 --------------------------------------------------
@@ -52,9 +52,9 @@ $ ruby api_orasaas.rb
 $ ruby api_orasaas_html.rb 
 $ ruby api_orasaas_logging.rb 
 
-============
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 CURL/HTML
-============
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 -------------------------
 cURL to create a DB
 -------------------------
