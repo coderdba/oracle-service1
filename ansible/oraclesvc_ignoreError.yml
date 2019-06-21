@@ -1,4 +1,4 @@
-- hosts: ed01adm01vm01.target.com
+- hosts: exd01adm01vm01.x.com
   vars:
     oracle_home: /u01/app/oracle/product/11.2.0.4/dbhome_1
     oracle_sid: DB11G11
